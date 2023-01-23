@@ -7,7 +7,7 @@ public class ScenesMove1 : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("next");
+        Debug.Log("Monster");
         SceneManager.LoadScene(3);
     }
 }
