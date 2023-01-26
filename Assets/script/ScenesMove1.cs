@@ -7,7 +7,11 @@ public class ScenesMove1 : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Monster");
-        SceneManager.LoadScene(3);
+        Debug.Log("Player");
+
+        if (other.tag == "Player")
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }

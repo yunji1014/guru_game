@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ScenesMove11 : MonoBehaviour
 {
-    void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        Debug.Log("Player");
+
+        if (other.tag == "Player")
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
         }
     }
 }

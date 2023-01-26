@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class enemy1 : MonoBehaviour
+public class enemy3 : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -11,7 +11,7 @@ public class enemy1 : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
     }
 }

@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class flag2 : MonoBehaviour
 {
-    void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetMouseButtonDown(0))
-            SceneManager.LoadScene(4);
+        Debug.Log("Player");
+
+        if (other.tag == "Player")
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }
 
