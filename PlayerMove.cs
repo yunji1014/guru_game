@@ -11,32 +11,46 @@ public class PlayerMove : MonoBehaviour
     public bool doubleJumpState;
     Rigidbody2D rigid;
 
+    public AudioClip audioJump;
+    public AudioClip audiolanding;
+    //    public AudioClip audioAttack;
+    //    public AudioClip audio audioDamaged;
+//    public AudioClip audioDie;
+//    public AudioClip audioFinish;
+
+    AudioSource audioSource;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
-void Update()
+    void Update()
     {
         if (rigid.velocity.y == 0)
             isJumping = false;
         else
             isJumping = true;
 
-        if(isJumping == false)
+        if (isJumping == false)
         {
             doubleJumpState = true;
         }
 
-        if (isJumping == false && Input.GetButtonDown("Jump")) 
+        if (isJumping == false && Input.GetButtonDown("Jump"))
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            audioSource.clip = audioJump;
+            audioSource.Play();
         }
         else if (doubleJumpState && Input.GetButtonDown("Jump"))
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             doubleJumpState = false;
+            audioSource.clip = audioJump;
+            audioSource.Play();
         }
 
         if (Input.GetButtonUp("Horizontal"))
