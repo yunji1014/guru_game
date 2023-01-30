@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class enemy1 : MonoBehaviour
 {
-    void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetMouseButtonDown(0))
-            SceneManager.LoadScene(3);
+        Debug.Log("Player");
+
+        if (other.tag == "Player")
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }
