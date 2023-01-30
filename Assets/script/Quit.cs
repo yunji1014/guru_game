@@ -7,7 +7,6 @@ public class Quit : MonoBehaviour
     public void OnClickExit()
     {
         Application.Quit();
-        Debug.Log("Button Click");
     }
     // Start is called before the first frame update
     void Start()
